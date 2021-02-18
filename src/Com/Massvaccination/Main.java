@@ -1,7 +1,7 @@
 package Com.Massvaccination;
-
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Date;
 
 
 public class Main {
@@ -53,6 +53,7 @@ class Controller {
         if(countryInput.equals("1")){
             Sweden sweden = new Sweden();
             sweden.printInfo();
+        } else if (countryInput.equals("2")){
             Denmark denmark = new Denmark();
             denmark.printInfo();
         } else if (countryInput.equals("3")){
@@ -62,8 +63,8 @@ class Controller {
             Finland finland = new Finland();
             finland.printInfo();
         }
-        System.out.println("Press any key to continue");
         calculator(countryInput);
+
     }
 
     public void calculator(String input){
@@ -74,13 +75,13 @@ class Controller {
             Finland finland = new Finland();
 
         if(input.equals("1")){
-            new Calculation(sweden.population, vaccine.afterLosses);
+            new Calculation(sweden.population, vaccine.afterLosses, sweden.name);
         } else if (input.equals("2")){
-            new Calculation(denmark.population, vaccine.afterLosses);
+            new Calculation(denmark.population, vaccine.afterLosses, denmark.name);
         } else if (input.equals("3")){
-            new Calculation(norway.population, vaccine.afterLosses);
+            new Calculation(norway.population, vaccine.afterLosses, norway.name);
         } else if (input.equals("4")) {
-            new Calculation(finland.population, vaccine.afterLosses);
+            new Calculation(finland.population, vaccine.afterLosses, finland.name);
         }
 
 //        this.sc.nextLine();
@@ -96,7 +97,7 @@ class Controller {
 
 class Display {
 
-    public void start(){
+    public void start() {
         System.out.println("--- Master Vaccinator ---");
         System.out.println("-------------------------");
         System.out.println(" Choose alternative");
@@ -104,7 +105,7 @@ class Display {
         System.out.println("2. View calender for booking\n");
     }
 
-    public static void countries(){
+    public static void countries() {
         System.out.println("Choose a country to start calculation.");
         System.out.println("1. Sweden");
         System.out.println("2. Denmark");
@@ -113,19 +114,11 @@ class Display {
     }
 
 
-    public static void calculating(){
-        System.out.println("---Calculator---");
-        System.out.println("---Press 1 to start calculation---");
-
-    }
-
-    public static void booking(){
+    public static void booking() {
         System.out.println("Vaccination times available");
-        System.out.println("1st.2nd.3rd.5th.6th.7th....");
+
     }
-
 }
-
 
 class Country {
         public int population;
@@ -158,6 +151,56 @@ class Finland extends Country {
     }
 }
 
+class Booking {
+//    Date today = Calender.getInstance().getTime();
+
+    public static void calender(String month) {
+    int startDayOfMonth = 1;
+    int spaces = startDayOfMonth;
+
+    String[] months = {
+            "",                          // So we start with month [1] Feb
+            "January", "February", "March",
+            "April", "May", "June",
+            "July", "August", "September",
+            "October", "November", "December"
+    };
+
+    int[] days = {
+            0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
+
+        for (int m = 1; m <= 12; m++) {
+            System.out.println("_______________________________");
+            System.out.println("    Sun  Mon  Tue  Wed  Thu  Fri   Sat");
+
+            spaces = (days[m-1] + spaces)%7;
+
+            for (int i = 0; i < spaces; i++)
+                System.out.println("      ");
+            for (int i = 1; i <= days[m]; i++) {
+                System.out.printf(" %3d ", i);
+                if (((i + spaces) % 7 == 0) || (i == days[m]))
+                    System.out.println();
+            }
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 class Vaccine {
     public int afterLosses;
     public Vaccine() {
@@ -165,6 +208,7 @@ class Vaccine {
         int randomAmount = r.nextInt(120000-60000)+60000;
         int lostAmount = (int) (Math.random() * 10000);
         this.afterLosses = randomAmount - lostAmount;
+        System.out.println("----Vaccine information----");
         System.out.println("The selected country has ordered "+randomAmount+ " doses.");
         System.out.println("Vaccine doses not delivered "+lostAmount);
         System.out.println("Vaccine doses delivered "+afterLosses + "\n");
@@ -172,14 +216,13 @@ class Vaccine {
 }
 
 class Calculation {
-    public Calculation(int population, int afterLosses) {
+    public Calculation(int population, int afterLosses, String name) {
         int vaccinated = 0, months = 0;
         for (int i = 0; vaccinated <= population; i++) {
             vaccinated = vaccinated + afterLosses;
             months ++;
         }
-            System.out.println(vaccinated);
-            System.out.println(months);
+            System.out.println("The vaccine distribution for "+name+" has been calculated to "+months+" months\n");
     }
 }
 
