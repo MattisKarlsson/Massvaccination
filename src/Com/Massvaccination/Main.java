@@ -1,7 +1,8 @@
 package Com.Massvaccination;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class Main {
@@ -89,6 +90,7 @@ class Controller {
 
     public void booker(){
         Display.booking();
+        this.sc = new Scanner(System.in);
 //        String input = this.sc.nextLine();
     }
 
@@ -99,8 +101,9 @@ class Display {
 
     public void start() {
         System.out.println("--- Master Vaccinator ---");
-        System.out.println("-------------------------");
-        System.out.println(" Choose alternative");
+        System.out.println("-------  Welcome  -------");
+        System.out.println("-------------------------\n");
+        System.out.println("  Choose an alternative");
         System.out.println("1. View countries for calculation");
         System.out.println("2. View calender for booking\n");
     }
@@ -116,6 +119,8 @@ class Display {
 
     public static void booking() {
         System.out.println("Vaccination times available");
+        Booking booking = new Booking();
+//        Booking.calender();
 
     }
 }
@@ -153,39 +158,18 @@ class Finland extends Country {
 
 class Booking {
 //    Date today = Calender.getInstance().getTime();
-
-    public static void calender(String month) {
-    int startDayOfMonth = 1;
-    int spaces = startDayOfMonth;
-
-    String[] months = {
-            "",                          // So we start with month [1] Feb
-            "January", "February", "March",
-            "April", "May", "June",
-            "July", "August", "September",
-            "October", "November", "December"
-    };
-
-    int[] days = {
-            0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    };
-
-        for (int m = 1; m <= 12; m++) {
-            System.out.println("_______________________________");
-            System.out.println("    Sun  Mon  Tue  Wed  Thu  Fri   Sat");
-
-            spaces = (days[m-1] + spaces)%7;
-
-            for (int i = 0; i < spaces; i++)
-                System.out.println("      ");
-            for (int i = 1; i <= days[m]; i++) {
-                System.out.printf(" %3d ", i);
-                if (((i + spaces) % 7 == 0) || (i == days[m]))
-                    System.out.println();
-            }
-        }
-
-    }
+//
+//    public static void calender() {
+//
+//        int month = 2;
+//
+//        Calendar cal = new GregorianCalendar();
+//        int cDay = cal.get(Calendar.DATE);
+//        int cMonth = cal.get(Calendar.MONTH);
+//
+//        GregorianCalendar gCal = new GregorianCalendar(month);
+//        int days = gCal.getActualMaximum(Calendar.DATE);
+//    }
 
 
 }
