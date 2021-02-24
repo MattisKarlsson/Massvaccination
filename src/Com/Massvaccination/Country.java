@@ -4,7 +4,7 @@ class Country {
     public int population;
     public String name;
     public void printInfo(){
-        System.out.println("You've chosen " + this.name + ".\n" + this.name + "'s current population is "+ this.population + ".\n");
+        Display.countryInfo(name, population);
     }}
 class Sweden extends Country{
     public Sweden(){
@@ -20,13 +20,13 @@ class Denmark extends Country {
 }
 class Norway extends Country{
     public Norway() {
-        super.population = 5_385_000;
-        super.name = "Norway";
+        this.population = 5_385_000;
+        this.name = "Norway";
     }
 }
 class Finland extends Country {
     public Finland() {
-        super.population = 5_545_000;
-        super.name = "Finland";
+        this.population = 5_545_000;
+        this.name = "Finland";
     }
 }

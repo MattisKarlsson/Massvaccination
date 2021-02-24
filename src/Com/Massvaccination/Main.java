@@ -6,14 +6,15 @@ import java.util.GregorianCalendar;
 
 public class Main {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);      // Scanner to read input
         Controller controller = new Controller(); // To import class Controller
-        String input;                             //
+        String input;                             // Declare empty string
 
-        boolean run = true;
-        while(run) {
-            input = controller.start();
+        boolean run = true;                       // Declare boolean run to = true
+        while(run) {                              // While-loop to run, as long as run = true
+            input = controller.start();           // Set input to call on class/method, which then calls on scanner
 
+            // Switch-method to listen to input
+            // if other than 1 || 2, set run == false breaking the method.
             switch (input) {
                 case "1":
                     controller.country();
@@ -23,7 +24,7 @@ public class Main {
                     break;
                 default:
                     run = false;
-                    System.out.println("Exiting Master Vaccinator");
+                    Display.exit();
                     break;
             }
         }
