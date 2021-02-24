@@ -1,5 +1,7 @@
 package Com.Massvaccination;
 
+// Constructor taking arguments from classes Country and Vaccine
+// Then using a for loop to calculate months until population vaccinated.
 class Calculation {
     public Calculation(int population, int afterLosses, String name) {
         int vaccinated = 0, months = 0;
@@ -7,6 +9,6 @@ class Calculation {
             vaccinated = vaccinated + afterLosses;
             months ++;
         }
-        System.out.println("The vaccine distribution for "+name+" has been calculated to "+months+" months\n");
+        Display.calculation(name, months);
     }
 }
