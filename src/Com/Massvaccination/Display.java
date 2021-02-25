@@ -11,6 +11,7 @@ class Display {
         System.out.println("  Choose an alternative:");
         System.out.println("1. View countries for calculation");
         System.out.println("2. View calender for booking\n");
+        System.out.println("3. To exit Master Vaccinator");
     }
 
     public static void exit() {
@@ -18,7 +19,7 @@ class Display {
     }
 
     public static void countries() {
-        System.out.println("Choose a country to start calculation:");
+        System.out.println("Choose a country to view vaccine information and start calculation:");
         System.out.println("1. Sweden");
         System.out.println("2. Denmark");
         System.out.println("3. Norway");
@@ -34,19 +35,18 @@ class Display {
     }
 
     public static void vaccine(int randomAmount, int lostAmount, int afterLosses) {
-        System.out.println("                ----Vaccine information----");
-        System.out.println("On average the selected country ordered "+randomAmount+ " doses");
-        System.out.println("Average vaccine doses lost in transit per month "+lostAmount);
-        System.out.println("Average vaccine doses delivered per month "+afterLosses + "\n");
+        System.out.println("                ----Monthly Vaccine information----");
+        System.out.println("Average monthly doses ordered "+randomAmount+".");
+        System.out.println("Due to various losses estimated to about "+lostAmount+" monthly,\n"+"The continual amount received equals to "+afterLosses + "\n");
     }
 
     public static void countryInfo(String name, int population) {
         System.out.println("You've chosen " + name + ".\n" + name + "'s current population is "+ population + ".\n");
     }
 
-    public static void calculation(String name, int months) {
+    public static void calculation(String name, byte months) {
         System.out.println("                ----Calculation results----");
-        System.out.println("Covid-19 vaccine distribution for "+name+" was calculated to "+months+" months\n");
+        System.out.println("Covid-19 vaccine distribution for all of "+name+"'s population was calculated to "+months+" months\n");
     }
 
     public static void booking() {
