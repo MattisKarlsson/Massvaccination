@@ -13,6 +13,7 @@ public class Main {
         while(run) {                              // While-loop to run, as long as run = true
             input = controller.start();           // Set input to call on class/method, which then calls on scanner
 
+
             // Switch-method to listen to input
             // if other than 1 || 2, set run == false breaking the method.
             switch (input) {
