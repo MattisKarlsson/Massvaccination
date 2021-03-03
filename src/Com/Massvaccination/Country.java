@@ -1,11 +1,14 @@
 package Com.Massvaccination;
 
+// Class to declare varibles and call on Display.countryInfo with args
 class Country {
     public int population;
     public String name;
     public void printInfo(){
         Display.countryInfo(name, population);
     }}
+
+    // Following classes to extend and store info per country.
 class Sweden extends Country{
     public Sweden(){
         super.population = 10_300_000;

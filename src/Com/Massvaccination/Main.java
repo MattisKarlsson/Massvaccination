@@ -14,36 +14,21 @@ public class Main {
             input = controller.start();           // Set input to call on class/method, which then calls on scanner
 
 
+            // Step 1.
             // Switch-method to listen to input
             // if other than 1 || 2, set run == false breaking the method.
             switch (input) {
                 case "1":
-                    controller.country();
+                    controller.country();         // Call on method country in class controller (Small letter in class since we imported)
                     break;
                 case "2":
-                    controller.booker();
+                    controller.booker();          // Call on method booker in class controller  (Small letter in class since we imported)
                     break;
                 default:
-                    run = false;
-                    Display.exit();
+                    run = false;                  // run = false to end while loop
+                    Display.exit();               // Call on method exit in class Display
                     break;
             }
         }
     }
-}
-
-class Booking {
-//    Date today = Calender.getInstance().getTime();
-//
-//    public static void calender() {
-//
-//        byte month = 2;
-//
-//        Calendar cal = new GregorianCalendar();
-//        int cDay = cal.get(Calendar.DATE);
-//        int cMonth = cal.get(Calendar.MONTH);
-//
-//        GregorianCalendar gCal = new GregorianCalendar(month);
-//        int days = gCal.getActualMaximum(Calendar.DATE);
-//    }
 }
