@@ -1,13 +1,11 @@
 package Com.Massvaccination;
-import java.util.Scanner;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 
 public class Main {
     public static void main(String[] args){
+        Database.clearDatabase();                 // Calling Database to clear file ( Also since in the same package no need to import )
         Controller controller = new Controller(); // To import class Controller
         String input;                             // Declare empty string
+
 
         boolean run = true;                       // Declare boolean run to = true
         while(run) {                              // While-loop to run, as long as run = true
