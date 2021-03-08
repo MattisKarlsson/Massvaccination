@@ -78,8 +78,8 @@ class Controller {
 
     }
 
-    public void booker(){
-        Display.booking();
+    public void calculated(){
+        Display.calculations();
         this.sc = new Scanner(System.in);
 //        String input = this.sc.nextLine();
     }

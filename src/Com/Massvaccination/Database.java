@@ -1,7 +1,9 @@
 package Com.Massvaccination;
 import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;  // Import the IOException class to handle errors
+import java.util.Scanner;
 
 // Try - Catch since code might throw IOException error.
 public class Database {
@@ -16,6 +18,24 @@ public class Database {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+
+    // Using Scanner to read from file.
+    public static void readFile (){
+            try {
+                File myObj = new File("CovidResults.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    System.out.println(data);
+                }
+                myReader.close();
+            } catch (
+        FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
     }
 
     public boolean createDatabase(String filename) {

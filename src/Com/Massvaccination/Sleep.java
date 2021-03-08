@@ -1,3 +1,5 @@
+package Com.Massvaccination;
+
 public class Sleep {
     public Sleep(int time) {
         try {
