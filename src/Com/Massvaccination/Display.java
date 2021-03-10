@@ -13,7 +13,7 @@ class Display {
         System.out.println("-------------------------\n");
         System.out.println("  Choose an alternative:");
         System.out.println("1. View countries for calculation");
-        System.out.println("2. View calculation data");
+        System.out.println("2. View calculated data");
         System.out.println("3. To exit Master Vaccinator");
     }
 

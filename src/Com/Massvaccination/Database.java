@@ -20,7 +20,6 @@ public class Database {
         }
     }
 
-
     // Using Scanner to read from file.
     public static void readFile (){
             try {
@@ -36,17 +35,6 @@ public class Database {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
-    }
-
-    public boolean createDatabase(String filename) {
-        try{
-            File myObj = new File(filename);        // Import File method
-            return  myObj.createNewFile();          // Creates file from filename input
-        } catch (IOException e) {                   // Catches IOException error
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        return false;
     }
 
     public void updateDatabase(String filename, String country, int months) {
