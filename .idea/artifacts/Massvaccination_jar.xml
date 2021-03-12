@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Massvaccination:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Massvaccination_jar</output-path>
+    <root id="archive" name="Massvaccination.jar">
+      <element id="module-output" name="Massvaccination" />
+    </root>
+  </artifact>
+</component>
