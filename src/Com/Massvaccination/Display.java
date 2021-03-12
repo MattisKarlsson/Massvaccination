@@ -30,9 +30,6 @@ class Display {
     public static void proceed() {
         System.out.println("Press any key to continue:");
     }
-    public static void save() {
-        System.out.println("Press any key to store calculation to database:");
-    }
 
     // Step 2.
     public static void countryInfo(String name, int population) {
@@ -49,6 +46,7 @@ class Display {
         } catch (InterruptedException ie) {
             Throwable ex = null;
             ex.printStackTrace();
+            System.out.println("TimeOut Error");
         }
         System.out.println("Average monthly doses ordered "+randomAmount+".");
         System.out.println("Due to various losses ("+randomIssue+") estimated to about "+lostAmount+" doses monthly,\n"+"The continual amount received equals to "+afterLosses + "\n");

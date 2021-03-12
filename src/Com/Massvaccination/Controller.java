@@ -63,19 +63,17 @@ class Controller {
         Denmark denmark = new Denmark();
         Norway norway = new Norway();
         Finland finland = new Finland();
+        Calculation calculation = new Calculation();
 
         // Call on class Calculation with countryInput as arguments
         switch (countryInput) {
-            case "1" -> new Calculation(sweden.population, vaccine.afterLosses, sweden.name);
-            case "2" -> new Calculation(denmark.population, vaccine.afterLosses, denmark.name);
-            case "3" -> new Calculation(norway.population, vaccine.afterLosses, norway.name);
-            case "4" -> new Calculation(finland.population, vaccine.afterLosses, finland.name);
+            case "1" -> calculation.calculateVaccinePeriod(sweden, vaccine);
+            case "2" -> calculation.calculateVaccinePeriod(denmark, vaccine);
+            case "3" -> calculation.calculateVaccinePeriod(norway, vaccine);
+            case "4" -> calculation.calculateVaccinePeriod(finland, vaccine);
         }
-
-        Display.save();
         // input just to make program more interactive
         this.sc.nextLine();
-
     }
 
     public void calculated(){

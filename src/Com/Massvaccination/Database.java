@@ -45,6 +45,7 @@ public class Database {
             writer.write(String.valueOf(months));                       // Converts int to string, to write properly to text file
             writer.write(" months\n");
             writer.close();
+            System.out.println("Results saved");
         } catch (IOException e) {                  // Catches IOException error
             System.out.println("An error occurred.");
             e.printStackTrace();
